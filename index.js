@@ -61,7 +61,7 @@ function startGame() {
    let secondCard = randomCard()
    cards = [firstCard, secondCard]
    sum += firstCard + secondCard
-   
+   document.getElementById("gameStart").style.display ="none"
    renderGame()
 }   
     
@@ -74,26 +74,31 @@ function startGame() {
 //-update the instructions
 
 function renderGame() {
+    document.getElementById("gameEnd").style.display ="block"
 
      for (let i=0; i<cards.length; i++) {
-         cardsEl.textContent = cards[i] + " "
-
+         cardsEl.textContent += cards[i] + "  "
      }
-    // cardsEl.textContent += firstCard +  "-" + secondCard + " "
-    // scoreEl.textContent = sum
+   
+    scoreEl.textContent += sum + "  "
 
     if (sum === 21) {
         directionsEl.textContent = "You hit the JACKPOT!!"
-        // isAlive = false
-        // hasBlackJack = true
+        isAlive = false
+        hasBlackJack = true
     } else if (sum < 21){
         directionsEl.textContent = "Would you like another card?"
-        // isAlive = true
-        // hasBlackJack = false
+        isAlive = true
+        hasBlackJack = false
     } else if (sum > 21) {
         directionsEl.textContent = "BUSTED! Better luck next time"
-        // isAlive = false
-        // hasBlackJack = false
+        isAlive = false
+        hasBlackJack = false
+document.getElementById("gameStart").style.display ="block"
+document.getElementById("gameEnd").style.display ="none"
+// scoreEl.textContent = "Total score: " + "  " + 0
+// cardsEl.textContent = "Cards: " + "  "  + 0
+startGame()
     }
 }
 

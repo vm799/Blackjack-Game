@@ -25,8 +25,18 @@ padding: 0 25px;
             
         }
 
-        button {
+        #gameEnd  {
+            display: none;
+            margin-left: 25%;
+        }
 
+        #gameStart {
+            display: block;
+            margin-left: 20%;
+        }
+
+        button {
+           
             font-size: 20px;
             font-weight: bold;
             padding: 10px 30px;
@@ -46,6 +56,7 @@ border: 3px solid rgb(216, 13, 67) ;
             border-radius: 50px;
         }
 
+        
         .main-el {
             margin: 0 auto;
             top: 25%;
@@ -74,3 +85,5 @@ font-weight: 100;
         .currentPot-el {
             text-shadow: 0 0 3px#e61b9c, 0 0 5px #6a0a0a;
         }
+
+        
