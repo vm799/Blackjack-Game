@@ -8,36 +8,42 @@ html, body {
 img {
     margin: o auto;
    
-    positon: relative;
+    position: relative;
    width: 100%;
 
 }
         h1 {
-font-size: 30px;
+font-size: 35px;
 color:rgb(238, 16, 150);
 padding: 0 25px;
         }
 
         p {
-            color: white;
+            color: black;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 25px;
+            
         }
 
         button {
 
             font-size: 20px;
+            font-weight: bold;
             padding: 10px 30px;
             margin: 10px;
 background-color: rgb(242, 15, 208);
 border-radius: 10px;
-border-style: none;
-color: black;
+
+color: white;
+border: 3px solid rgb(216, 13, 67) ;
         }
 
         button:hover {
-            background-color: rgb(55, 213, 23);
+            background-color: rgb(143, 5, 97);
             color: white;
+            border: 4px solid rgb(225, 197, 225);
+            font-size: 25px;
+            border-radius: 50px;
         }
 
         .main-el {
@@ -45,21 +51,26 @@ color: black;
             top: 25%;
             position: absolute;
             padding: 50px;
-            background-color:black;
+            background-color: rgba(255, 255, 255, 0.701);
+            
             left: 10%;
             text-align: center;
             max-width: 300px;
+            border-radius: 15px;
         }
 
-        .directions-el{
-font-weight: bolder;
-color:thistle;
+        #directions-el,  p{
+        font-weight:900;
+        color:black;
+
         }
 
-        .data-el {
-font-size: 15px;
+        #score-el, #cards-el {
+font-size: 25px;
+text-shadow: 0 0 3px#e61b9c, 0 0 5px #71506b;
+font-weight: 100;
         }
 
         .currentPot-el {
-
+            text-shadow: 0 0 3px#e61b9c, 0 0 5px #6a0a0a;
         }

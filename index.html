@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>BlackJack Game</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
@@ -14,27 +14,30 @@
             <img src="https://images.unsplash.com/photo-1623522264952-8dff960ec8f2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGxheWluZyUyMGNhcmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="pack of cards lying face up">
        
         <div class="main-el">
-            <h1>Let's Play Cards 🃏</h1>
+            <h1>Let's Play Cards</h1>
 
-            <div class="directions-el">
-                <p >Want to play a round of BlackJack?</p>
-            </div>
+           
+                <p id="directions-el">Want to play a round of BlackJack?</p>
+           
+              
+                 <p id="cards-el">Cards: </p>
+         
 
-            <div class="data-el">
-                <p >Cards Dealt: </p>
-                <p >Total Score: </p>
-            </div>
+                
+                    <p id= "score-el">Total Score: </p>
+              
+           
 
-            <button id="start-el"> Start Game</button>
+            <button onclick="startGame()"> Start Game</button>
             </button>
-            <button id="newCard-el">Hit Me Up</button>
+            <button onclick="newCard()">Hit Me Up</button>
             </button>
 
-            <div class="currentPot-el">
-                <p >   </p>
-            </div>
+         
+                <p id="currentPot-el"></p>
+           
         </div>
     </div>
-        <script src="index.js" async defer></script>
+        <script src="index.js"></script>
     </body>
 </html>
