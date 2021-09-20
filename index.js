@@ -97,6 +97,11 @@ cards =[]
 cardsEl.textContent = "Cards"  +  ":"
 mainEl.style.backgroundColor = "green";
 directionsEl.style.backgroundColor = "rgb(238, 16, 150)";
+currentPotEl.style.color = "rgb(238, 16, 150)"
+currentPotEl.style.fontSize = "50px"
+currentPotEl.textContent = "£1,000,000"
+mainEl.style.border = "10px solid rgb(238, 16, 150)";
+
 
     } else if (sum < 21){
         directionsEl.textContent = "Would you like another card?"
