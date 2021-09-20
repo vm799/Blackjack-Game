@@ -57,7 +57,7 @@ border: 3px solid rgb(216, 13, 67) ;
         }
 
         
-        .main-el {
+        #main-el {
             margin: 0 auto;
             top: 25%;
             position: absolute;

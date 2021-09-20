@@ -19,6 +19,7 @@ let directionsEl = document.getElementById("directions-el")
 let cardsEl = document.getElementById("cards-el")
 let scoreEl = document.getElementById("score-el")
 let currentPotEl = document.getElementById("currentPot-el")
+let mainEl = document.getElementById("main-el")
 
 currentPotEl.textContent = "V" + " : " + "£2000"
 
@@ -55,13 +56,15 @@ function randomCard(){
 // -render the game function
 
 function startGame() {
-    
+    mainEl.style.backgroundColor = "rgba(255, 255, 255, 0.701)";
+directionsEl.style.color = "black";
     isAlive = true
    let firstCard = randomCard()
    let secondCard = randomCard()
    cards = [firstCard, secondCard]
    sum += firstCard + secondCard
-   document.getElementById("gameStart").style.display ="none"
+   
+  
    renderGame()
 }   
     
@@ -74,8 +77,8 @@ function startGame() {
 //-update the instructions
 
 function renderGame() {
+    document.getElementById("gameStart").style.display = "none"
     document.getElementById("gameEnd").style.display ="block"
-
      for (let i=0; i<cards.length; i++) {
          cardsEl.textContent += cards[i] + "  "
      }
@@ -86,6 +89,15 @@ function renderGame() {
         directionsEl.textContent = "You hit the JACKPOT!!"
         isAlive = false
         hasBlackJack = true
+        document.getElementById("gameStart").style.display ="block"
+document.getElementById("gameEnd").style.display ="none"
+sum = 0
+scoreEl.textContent = "Total Score" + " : "
+cards =[]
+cardsEl.textContent = "Cards"  +  ":"
+mainEl.style.backgroundColor = "green";
+directionsEl.style.backgroundColor = "rgb(238, 16, 150)";
+
     } else if (sum < 21){
         directionsEl.textContent = "Would you like another card?"
         isAlive = true
@@ -94,29 +106,44 @@ function renderGame() {
         directionsEl.textContent = "BUSTED! Better luck next time"
         isAlive = false
         hasBlackJack = false
-document.getElementById("gameStart").style.display ="block"
+        document.getElementById("gameStart").style.display ="block"
 document.getElementById("gameEnd").style.display ="none"
-// scoreEl.textContent = "Total score: " + "  " + 0
-// cardsEl.textContent = "Cards: " + "  "  + 0
-startGame()
-    }
+sum = 0
+scoreEl.textContent = "Total Score" + " : "
+cards =[]
+cardsEl.textContent = "Cards"  +  ":"
+mainEl.style.backgroundColor = "red";
+
+directionsEl.style.color = "white";
+    } 
+
 }
+
 
 //create a function that holds 2 key values to be true
 //only then can another card be generated and appended to the cards array and added to sum variable 
 // then rendergame again
 
-function newCard() {
+
+    function newCard() {
+        if (isAlive === true && hasBlackJack===false){
+//             document.getElementById("gameStart").style.display ="block"
+// document.getElementById("gameEnd").style.display ="none"
+            let card = randomCard()
+            sum += card
+            cards.push(card)
+            renderGame()
+        }
+        }
+
+// function newCard() {
     
-    if (isAlive === true && hasBlackJack === false) {
-    let card = randomCard()
-    sum += card
-    cards.push(card)
-    renderGame()
-}
-}
-
-
-
+//     if (isAlive === true && hasBlackJack === false) {
+//     let card = randomCard()
+//     sum += card
+//     cards.push(card)
+//     renderGame()
+// }
+// }
 
 
